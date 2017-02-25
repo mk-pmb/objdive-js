@@ -1,0 +1,29 @@
+{ "name": "objdive",
+  "version": "0.1.0",
+  "description": "Lookup object properties deeply.",
+  "keywords": [ "lookup", "object", "property" ],
+
+  "author": "M.K. (https://github.com/mk-pmb)",
+  "homepage": "https://github.com/mk-pmb/objdive-js#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mk-pmb/objdive-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mk-pmb/objdive-js/issues"
+  },
+
+  "private": false, "license": "ISC",
+
+  "main": "dive.js",
+  "scripts": { "test": "nodejs test/all.js" },
+  "directories": { "test": "test" },
+
+  "dependencies": {},
+  "devDependencies": {
+    "usnam-pmb": "^0.2.3"
+  },
+
+
+  "npm vs. BOM = Unexpected token": "-*- coding: UTF-8 -*-"
+}
