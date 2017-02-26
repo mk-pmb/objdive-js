@@ -8,38 +8,17 @@
 })(function () {
   'use strict';
 
-  function ifEmpty(x, d) {
-    if (x === null) { return d; }
-    if (x === undefined) { return d; }
-    return x;
-  }
-
-  function dive(data, path, miss) {
+  return function (data, path, miss) {
     path = String(path || '');
     if (!path) { return data; }
-    path = (path.match(/^[A-Za-z0-9_]/) ? path.split(/\./)
+    path = (path.match(/^[a-z0-9_]/i) ? path.split(/\./)
       : path.slice(1).split(path.substr(0, 1)));
       // NB: Using .substr instead of path[0] for MSIE6 compatibility.
     if (miss === undefined) { miss = false; }
-    path.forEach(function (key) { data = ifEmpty(data, miss)[key]; });
+    path.forEach(function (key) {
+      data = ((data === null) || (data === undefined) ? miss : data)[key];
+    });
     return data;
-  }
+  };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  return dive;
 });
