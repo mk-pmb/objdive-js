@@ -1,5 +1,5 @@
 { "name": "objdive",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Lookup object properties deeply.",
   "keywords": [ "lookup", "object", "property" ],
 
@@ -16,13 +16,15 @@
   "private": false, "license": "ISC",
 
   "main": "dive.js",
-  "scripts": { "test": "nodejs test/all.js" },
+  "scripts": {
+    "test": "nodejs test/all.js",
+    "mini": "minify4amd-pmb -o objdive.amd.min.js dive.js"
+  },
   "directories": { "test": "test" },
 
   "dependencies": {},
   "devDependencies": {
-    "read-resolved-file-sync": "^1.0.0",
-    "uglify-js": "^2.7.5",
+    "minify4amd-pmb": "*",
     "usnam-pmb": "^0.2.3"
   },
 
