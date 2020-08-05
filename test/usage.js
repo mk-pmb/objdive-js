@@ -46,6 +46,8 @@ function readmeDemo(equal) {
   equal(dive(x, '?::.@?hi'),    x['::.@'].hi);
 
   equal(dive(x, '.no.such.key'),    undefined);
+  equal(dive(x, '.toString'),       undefined);
+  equal(dive(x, '.hasOwnProperty'), undefined);
   // Prefer a crash?
   fails(function () { dive(x, '.no.such.key', null); },
     /^TypeError: [\S\s]+ null\b/);

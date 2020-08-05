@@ -46,7 +46,7 @@ from [test/usage.js](test/usage.js):
 
 <!--#include file="test/usage.js" start="  //#u" stop="  //#r"
   outdent="  " code="javascript" -->
-<!--#verbatim lncnt="60" -->
+<!--#verbatim lncnt="62" -->
 ```javascript
 var dive = require('objdive'), x = {
   '': { empty: 'key' },
@@ -82,6 +82,8 @@ equal(dive(x, '@'),           x['']);
 equal(dive(x, '@bar@./|'),    x.bar['./|']);
 equal(dive(x, '?::.@?hi'),    x['::.@'].hi);
 
+equal(dive(x, '.toString'),       undefined);
+equal(dive(x, '.hasOwnProperty'), undefined);
 equal(dive(x, '.no.such.key'),    undefined);
 // Prefer a crash?
 fails(function () { dive(x, '.no.such.key', null); },
@@ -113,6 +115,13 @@ equal(fancy('/404/crash/noes'),   undefined);
 
 <!--#toc stop="scan" -->
 
+
+
+Known issues
+------------
+
+* Versions before 0.1.3 had a flawed fallback implementation that would
+  return methods of `false` for some keys.
 
 
 

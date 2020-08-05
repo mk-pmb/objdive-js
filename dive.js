@@ -7,6 +7,7 @@
   if (e) { m.exports = (factory(require, e, m) || m.exports); }
 })(function () {
   'use strict';
+  var hop = Object.prototype.hasOwnProperty;
 
   return function (data, path, miss) {
     path = String(path || '');
@@ -16,7 +17,8 @@
       // NB: Using .substr instead of path[0] for MSIE6 compatibility.
     if (miss === undefined) { miss = false; }
     path.forEach(function (key) {
-      data = ((data === null) || (data === undefined) ? miss : data)[key];
+      data = ((data === null) || (data === undefined) ? miss : data);
+      data = (hop.call(data, key) ? data[key] : undefined);
     });
     return data;
   };
