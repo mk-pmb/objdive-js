@@ -1,5 +1,5 @@
 { "name": "objdive",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Lookup object properties deeply.",
   "keywords": [ "lookup", "object", "property" ],
 

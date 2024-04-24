@@ -26,6 +26,11 @@ If `fallback` is missing or `undefined`, it defaults to `false` in order to
 make any property lookup succeed (i.e. not crash) and yield `undefined`.
 If you want an Error thrown instead, give `null` (see examples below).
 
+
+
+Path syntax
+-----------
+
 Path splitting has two modes, based on the first character in `path`
 (let's call it "p0"):
 * If p0 is a letter (`A`..`Z`, `a`..`z`), digit (`0`..`9`) or `_`,
@@ -37,6 +42,7 @@ Path splitting has two modes, based on the first character in `path`
   If `path` begins with a high unicode character (above U+FFFF),
   it will most likely be represented as a [surrogate pair][surrog8],
   so p0 will be an unpaired high surrogate character.
+
 
 
 Usage
