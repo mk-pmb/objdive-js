@@ -1,5 +1,5 @@
 { "name": "objdive",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Lookup object properties deeply.",
   "keywords": [ "lookup", "object", "property" ],
 
@@ -29,5 +29,5 @@
   },
 
 
-  "npm vs. BOM = Unexpected token": "-*- coding: UTF-8 -*-"
+  "engines": { "npm": ">=7.0.0", "node": ">=16.0.0" }
 }

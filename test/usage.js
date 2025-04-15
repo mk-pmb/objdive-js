@@ -71,6 +71,15 @@ function readmeDemo(equal) {
   equal(fancy('/404/?limit'), 9000);
   equal(fancy('/404/crash'),        null);
   equal(fancy('/404/crash/noes'),   undefined);
+
+  // You can also give paths as array to avoid auto-split:
+  equal(dive(x, ['foo']),               x.foo);
+  equal(dive(x, ['foo', 'bar']),        x.foo.bar);
+  equal(dive(x, ['foo.bar']),           undefined);
+  equal(dive(x, ['bar', 'qux', '2']),   x.bar.qux[2]);
+  equal(dive(x, ['bar', 'qux', 2]),     x.bar.qux[2]);
+  equal(dive(x, ['bar.qux', 2]),        x['bar.qux'][2]);
+  equal(dive(x, ['bar', 'qux.2']),      undefined);
   //#r
 
   console.log("+OK usage test passed.");    //= "+OK usage test passed."
